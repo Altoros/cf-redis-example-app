@@ -57,6 +57,7 @@ end
 def redis_client
   @client ||= Redis.new(
     host: redis_credentials.fetch('host'),
-    port: redis_credentials.fetch('port')
+    port: redis_credentials.fetch('port'),
+    db: redis_credentials.fetch('db')
   )
 end
